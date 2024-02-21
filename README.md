@@ -15,4 +15,4 @@ For example:
 
 * if `n = 50`, `num` should be `47`
 * if `n = 7`; `num` should be `7`
-* if `n = 11`; `num` should be `undefined`
+* if `n = 1`; `num` should be `undefined`
