@@ -14,16 +14,14 @@ const n = parseInt(prompt("Enter a number: "));
  * etc. The number 0, fractions, decimals, and negative numbers
  * are not natural numbers.
  */
-let num = -1;
-for (let i = 2; i <= n; i++) {
-    while (n % i == 0) {
-        num= i;
-        n = n /= i;
-    }
-    if (n > 1) {
-      num = n;
-}
-return num;
+let num = '';
+let i = 2; 
+while (i <= n) {
+  if (n % i === 0) {
+    n /= i;
+  } else {
+    i++;
+  }
 }
 
 // DO NOT CHANGE ANYTHING BELOW THIS.
