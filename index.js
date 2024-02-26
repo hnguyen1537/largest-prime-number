@@ -14,13 +14,33 @@ const n = parseInt(prompt("Enter a number: "));
  * etc. The number 0, fractions, decimals, and negative numbers
  * are not natural numbers.
  */
-let num = '';
-let i = 2; 
-while (i <= n) {
-  if (n % i === 0) {
-    n /= i;
+let num;
+let primeArray = [];
+
+if (n > 1) {
+  if (n == 2 || n == 3) {
+    num = n;
   } else {
-    i++;
+    primeArray.push(2);
+    primeArray.push(3);
+  
+    for (i = 4; i <= n; i++) {
+      if (!(i % 2 == 0)) {
+        var isPrime = true;
+    
+        for (j = 0; j < primeArray.length; j++) {
+          if (i % primeArray[j] == 0) {
+            isPrime = false;
+          }
+        }
+    
+        if (isPrime) {
+          primeArray.push(i);
+        }
+      }
+    }
+  
+    num = primeArray[primeArray.length - 1];
   }
 }
 
